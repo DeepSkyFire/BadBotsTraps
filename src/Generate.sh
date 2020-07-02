@@ -65,6 +65,6 @@ if [ "$GENERATE_FAST_MODE" = true ]; then
 
 else
       echo "Normal Mode. Please be waitting"
-      time dd if=/dev/zero bs=1M count=$(($GZIPFILE_SIZE*1024)) | gzip > $NEW_GZIPFILE_PATH/bomb.gzip
+      time dd if=/dev/zero bs=1M count=$(($GZIPFILE_SIZE*1024)) | gzip -9 > $NEW_GZIPFILE_PATH/bomb.gzip
       du -sh $NEW_GZIPFILE_PATH/bomb.gzip && md5sum $NEW_GZIPFILE_PATH/bomb.gzip
 fi
