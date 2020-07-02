@@ -27,8 +27,16 @@ while getopts "s:m:h" arg; do
       s)
       if [ -n "$OPTARG" ]; then
           case $OPTARG in
-          ''|*[!0-9]*) echo "Invalid size parameter."; exit 1 ;;
-          *) GZIPFILE_SIZE=$OPTARG ;;
+
+          ''|*[!0-9]*)
+               echo "Invalid size parameter."
+               exit 1 
+          ;;
+
+          *) 
+            GZIPFILE_SIZE=$OPTARG 
+          ;;
+          
           esac
       fi
       ;;
