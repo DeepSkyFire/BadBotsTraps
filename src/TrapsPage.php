@@ -9,7 +9,7 @@ header("Content-Length: ".filesize($GzipFile));
 Header("HTTP/1.1 200 OK"); //'HTTP/1.1 404 Not Found'
 
 if (ob_get_level()){
-    ob_end_clean()
+    ob_end_clean();
 }
 
 readfile($GzipFile);
